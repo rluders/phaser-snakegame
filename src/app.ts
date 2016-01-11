@@ -175,6 +175,7 @@ module Scenes {
         private _scoreValue: Phaser.Text;
 
         create() {
+            this.reset();
             // create the scene
             this.game.stage.backgroundColor = '#061f27';
 
@@ -197,7 +198,6 @@ module Scenes {
         }
 
         update() {
-
             for (var i = 0; i < this._snake.cell.length; i++) {
                 if (this._snake.cell[i].x == this._apple.x
                     && this._snake.cell[i].y == this._apple.y) {
@@ -212,6 +212,11 @@ module Scenes {
                     }
                 }
             }
+        }
+
+        reset() {
+            this.game.score = 0;
+            this.game.speed = 0;
         }
 
     }
